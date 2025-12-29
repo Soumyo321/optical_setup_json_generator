@@ -3,7 +3,8 @@ import json
 import re
 import os
 from datetime import datetime
-from langchain.chat_models import init_chat_model
+# from langchain.chat_models import init_chat_model
+from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -12,7 +13,10 @@ os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
 os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 
 # Initialize model
-model = init_chat_model("groq:qwen/qwen3-32b")
+model = ChatGroq(
+    model_name="qwen/qwen3-32b",
+    temperature=0
+)
 
 # ============================================================================
 # SYSTEM PROMPT
