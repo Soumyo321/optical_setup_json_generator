@@ -3,7 +3,7 @@ import json
 import re
 import os
 from datetime import datetime
-from langchain_community.chat_models import ChatGroq
+from langchain_groq import ChatGroq
 
 from dotenv import load_dotenv
 
